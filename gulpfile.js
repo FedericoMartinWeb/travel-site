@@ -4,7 +4,9 @@ postcss = require('gulp-postcss'),
 autoprefixer = require('autoprefixer'),
 cssvars = require('postcss-simple-vars'),
 nested = require('postcss-nested'),
-cssImport = require('postcss-import');
+cssImport = require('postcss-import'),
+// Paquete especifico de browser-sync
+browserSync = require('browser-sync').create();
 
 gulp.task('default', function(){
    console.log("de one"); 
@@ -21,6 +23,7 @@ gulp.task('styles', function(){
 });
 
 gulp.task('watch', function(){
+    
     watch('./app/index.html', function(){
        gulp.start('html');
     });
